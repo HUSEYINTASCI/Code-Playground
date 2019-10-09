@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <link href="view/views/images/icon.jpg" rel="icon" type="image/x-icon" />
+  <title>UC Berkeley Extension Playground</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+  <link href="css/cloudEditCustom.css" rel="stylesheet">
+</head>
+<style>
+
+body {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+.windowGroup {
+  background: #000;
+  height: 400px;
+}
+.bar {
+  padding: 8px 10px;
+  white-space: nowrap;
+  position: relative;
+  background: #262831;
+  color: #D7D8E0;
+  font-size: 1em;
+}
+.window {
+  margin-top:0;
+  border:none;
+  height:355px;
+
+}
+ 
+.preview {
+  width: 100%;
+    position: relative;
+    -webkit-appearance: none;
+    margin: 0.75em 0 0 0;
+    border: none !important;
+    border-radius: 3px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    height: 37.5rem;
+    top: 100%;
+}
+</style>
+<body>
+  <section style="padding:0;">
+    <div class="row windowGroup" style="margin-bottom:50px;">
+      <div class="column-33">
+        <div class="bar">HTML</div>
+        <div class="window html">
+          <pre id="html"><%- include('html/html.ejs') %></pre>
+        </div>
+      </div>
+      <div class="column-33">
+        <div class="bar">CSS</div>
+        <div class="window css">
+          <pre id="css"><%- include('css/css.ejs') %></pre>
+        </div>
+      </div>
+      <div class="column-33">
+        <div class="bar">JAVASCRIPT</div>
+        <div class="window js">
+          <pre id="js"><%- include('js/js.ejs') %></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="row console" style="display:none;">
+      <pre id="console"></pre>
+      <span class="windowLabel" id="consoleLabel">Console</span>
+    </div>
+
+    <div class="html-container"></div>
+
+    <div class="row preview">
+      <iframe id="iframe" name="CloudEdit"
+        sandbox="allow-modals allow-scripts allow-pointer-lock allow-same-origin allow-popups allow-forms"
+        allowtransparency="true">
+      </iframe>
+    </div>
+<div id="menu"></div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/ace/ext-emmet.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/ace/emmet.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.ui.position.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jqconsole.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cloudEdit.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
+
+  // This loads in the tempate page used as a preview.
+  $(document).ready(function() {
+    $('.html-container').load('/template', function() {
+      html = $('.html-container').html();
+    });
+  });
+</script>
+</html>
+

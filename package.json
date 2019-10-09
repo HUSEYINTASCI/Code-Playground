@@ -1,0 +1,29 @@
+{
+  "name": "Code-Playground",
+  "version": "1.0.0",
+  "description": "Coding become fun...",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HUSEYINTASCI/Code-Playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HUSEYINTASCI/Code-Playground/issues"
+  },
+  "homepage": "https://github.com/HUSEYINTASCI/Code-Playground#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-form": "^0.12.6",
+    "express-partial": "^0.1.0",
+    "mysql": "^2.17.1"
+  }
+}
