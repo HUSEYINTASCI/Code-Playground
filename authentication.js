@@ -23,8 +23,8 @@ var connection = mysql.createConnection({
   // Your username
   user: "root",
 
-  // Your u_password
-  u_password: "ucbsf2019",
+  // Your u_passwordryptjs
+  password: "ucbsf2019",
   database: "cplayground_db"
 });
 
@@ -46,6 +46,7 @@ app.get('/user /:id', function(req, res){
 
 
 
+
 app.get('/signup/:u_email/:u_password', function(req, res){
 	// http://localhost:3000/signup/haven@yahoo.com/goldenwarriors24
 		//salt that is made:
@@ -57,7 +58,7 @@ app.get('/signup/:u_email/:u_password', function(req, res){
 
 	    	// res.send(p_hash);
 
-	    	connection.query('INSERT INTO user (u_u_email, u_password_hash) VALUES (?, ?)', [req.params.u_email, p_hash],function (error, results, fields) {
+	    	connection.query('INSERT INTO user (u_email, u_password) VALUES (?, ?)', [req.params.u_email, p_hash],function (error, results, fields) {
 	    	  
 	    	  var what_user_sees = "";
 	    	  if (error){
