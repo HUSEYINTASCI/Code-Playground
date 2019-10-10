@@ -25,7 +25,7 @@ var connection = mysql.createConnection({
 
   // Your u_password
   u_password: "ucbsf2019",
-  database: "playground_db"
+  database: "cplayground_db"
 });
 
 app.get('/', function(req, res){
