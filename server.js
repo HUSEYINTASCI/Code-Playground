@@ -10,6 +10,7 @@ const mysql = require("mysql");
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.static('public/home'));
 app.use(express.static('server/views'));
 app.use(bodyParser());
 
@@ -31,9 +32,12 @@ var connection = mysql.createConnection({
 
 
 app.get('/', function(req, res) {
-    res.render(__dirname + '/view/views/test_run.ejs');
+    res.render(__dirname + 'public/home/index.html');
   });
   
+  app.get('/playground', function(req, res) {
+    res.render(__dirname + '/view/views/playground.ejs');
+  });
    
   app.get('/html', function(req, res) {
     res.render(__dirname + '/view/views/html/html.ejs');
