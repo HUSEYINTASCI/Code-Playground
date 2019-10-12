@@ -1,0 +1,132 @@
+//variables
+$black: #1B1C22;
+$vdark: #262831;
+$dark: #31343F;
+$grey: #D7D8E0;
+$white: #FFFFFF;
+
+body {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+
+  .playground {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+
+    .boxes {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+
+      .box-edit {
+        height: 50%;
+        min-height: 125px;
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        background: #262831;
+        border-bottom: 15px solid $black;
+        position: relative;
+        overflow: hidden;
+
+        .box {
+          height: 100%;
+          width: 33.3333%;
+          border-right: 1px solid $black;
+          border-bottom: 1px solid $dark;
+          color: $grey;
+          font-size: 1em;
+          position: relative;
+          overflow: hidden;
+
+          .bar {
+            padding: 8px 10px;
+            background: rgba(0,0,0,0.15);
+            border-bottom: 1px solid $black;
+            white-space: nowrap;
+            position: relative;
+          }
+          .code-block {
+            height: 100%;
+            height: calc(100% - 35px);
+            width: 100%;
+            position: relative;
+
+            textarea {
+              width: 100%;
+              height: 100%;
+              padding: 15px;
+              background: $vdark;
+              border: 0;
+              resize: none;
+              color: $white;
+              font-family: 'Source Code Pro', monospace, sans-serif;
+              font-size: 1em;
+              font-weight: 400;
+              letter-spacing: 0.02em;
+              line-height: 1.618em;
+              transition: ease all 0.1s;
+
+              &:focus {
+                background: $dark;
+                outline: 0px solid transparent;
+              }
+            }
+          }
+          &:last-child {
+            border-right: 0px solid transparent;
+          }
+        }
+      }
+<<<<<<< HEAD
+      .box-output {
+        flex-grow: 1;
+        position: relative;
+=======
+    }
+    .box-output {
+      flex-grow: 1;
+      position: relative;
+
+      .results {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-top: 1px solid $dark;
+        border-radius: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        position: absolute;
+        left: 0;
+        top: 0;
+>>>>>>> 92598bf7300deef9b7ce55163e08b25e70bc5263
+
+        .results {
+          height: 100%;
+          width: 100%;
+          border-top: 1px solid $dark;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          .iframe-result {
+            width: 100%;
+            height: 100%;
+            background: $white;
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}

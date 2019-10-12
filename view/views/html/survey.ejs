@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add button</title>
+</head>
+<body>
+        <div id="survey">
+            <h1>Add button</h1>
+    
+           
+            <form action="/api/button" method="POST">
+                Button Name:<br>
+                <input id="name" type="text" name="hname" required>
+                <br>
+                Button:<br>
+                <input type="text" name="description" required>
+                <br><br>
+    
+                Button Department: <br>
+                    <select name="dep" placeholder="Choose an option" required>
+                            <option value="Html">Html</option>
+                            <option value="Css">Css</option>
+                            <option value="Javascript">Javascript</option>
+
+                          </select>
+                    <br><br><br><br>
+                    <% } %>
+                <br><br>
+    
+               
+                <button id="fn">save</button>
+                <button id="cansel">Cansel</button>
+            </form>
+    
+        </div>
+
+         
+</body>
+</html>
