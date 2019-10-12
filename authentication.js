@@ -2,6 +2,7 @@ var mysql = require("mysql");
 var express = require('express');
 var app = express();
 var bcrypt = require('bcryptjs');
+var path = require('path');
 
 //session stuff
 	var cookieParser = require('cookie-parser');
@@ -29,21 +30,19 @@ var connection = mysql.createConnection({
 });
 
 app.get('/', function(req, res){
-	res.send('hi');
+	res.sendFile(path.join(__dirname + '/login.html'));
 });
 
+
+
 // http://localhost:3000/user /1
-app.get('/user /:id', function(req, res){
+app.post('/user /:id', function(req, res){
 	connection.query('SELECT * FROM user WHERE u_id = ?', [req.params.id],function (error, results, fields) {
 	  if (error) throw error;
 	  
 	  res.json(results[0]);
 	});
 });
-
-
-
-
 
 
 

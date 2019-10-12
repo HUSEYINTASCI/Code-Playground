@@ -27,6 +27,7 @@
     "express-form": "^0.12.6",
     "express-partial": "^0.1.0",
     "express-session": "^1.16.2",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "path": "^0.12.7"
   }
 }
