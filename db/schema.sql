@@ -5,7 +5,7 @@ CREATE DATABASE cplayground_db;
 
 USE cplayground_db;
 
-CREATE TABLE user(
+CREATE TABLE users(
      u_id INT NOT NULL AUTO_INCREMENT,
      u_name VARCHAR(255),
      u_password VARCHAR(255),

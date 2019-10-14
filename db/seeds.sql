@@ -1,6 +1,6 @@
 USE cplayground_db;
 
-INSERT INTO user (u_name,u_password,u_email) VALUES
+INSERT INTO users (u_name,u_password,u_email) VALUES
 ("Harry","123","huseyintasci@yandex.com");
 
 

@@ -374,7 +374,7 @@
   }
 
   // Download HTML/CSS/JS
-  // Source: http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
+  
   $("#download").on("click", function() {
 
     function destroyClickedElement(event) {
@@ -644,13 +644,13 @@
         }
       }
     });
-  })();
+  });
 
   // Get checkbox values from context-menu-input-*
   // and update "global" variable "use" in order to build
   // preview window
   // $("input[name*='context-menu-input']").on("click", function() {
-  $(".context-menu-list").on("click", "input[name*='context-menu-input']", function() {
+  $(".context-menu-list").on("click" , function() {
     var val = $(this).val();
     if (val) {
       switch (val) {
@@ -711,21 +711,7 @@
     }
   });
 
-  // Apply theme and save to localStorage
-  function updateTheme(theme) {
-    theme = "ace/theme/" + theme;
-    htmlField.setTheme(theme);
-    cssField.setTheme(theme);
-    jsField.setTheme(theme);
-    // Uncomment below if you want the page/body background to follow the set theme colour.
-    // we delay obtaining the css colour by 1s as it takes a moment to propagate
-    /*
-    setTimeout(function() {
-      $("body, section").css("background-color", $("#html").css("background-color"));
-    }, 1000);
-    */
-    localStorage.setItem("theme", theme);
-  }
+  
 
   // Detect a user leaving a page and display a message
   window.onbeforeunload = function (e) {

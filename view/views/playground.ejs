@@ -48,9 +48,23 @@ body {
     height: 37.5rem;
     top: 100%;
 }
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+button:hover {
+  opacity: 0.8;
+}
 </style>
 <body>
-  <button>Back</button>
+  <button onclick="cancel()" type="button"  class="cancelbtn">Cancel</button>
+  <button id="download" type="button"  class="cancelbtn">Download Html</button>
+  <button id="clear" type="button"  class="cancelbtn">Clear</button>
+  <button id="save" type="button"  class="cancelbtn">Save Local Stroge</button>
+  <button id="load" type="button"  class="cancelbtn">load from local store</button>
+  <input class="context-menu-list" name="context-menu-input">
+  <label id="cssLabel" for="yyy"></label>
   <section style="padding:0;">
     <div class="row windowGroup" style="margin-bottom:50px;">
       <div class="column-33">
@@ -88,7 +102,7 @@ body {
     </div>
 <div id="menu"></div>
   </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/ace/ext-emmet.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/ace/emmet.js" type="text/javascript" charset="utf-8"></script>
@@ -96,6 +110,7 @@ body {
   <script src="js/jqconsole.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/cloudEdit.js" type="text/javascript" charset="utf-8"></script>
 </body>
+<script src="js/jquery-1.12.1.min.js"></script>
 <script>
 
   // This loads in the tempate page used as a preview.
@@ -104,6 +119,11 @@ body {
       html = $('.html-container').html();
     });
   });
+
+  function cancel() {
+    window.location.href = "http://localhost:5000/";
+ }
+ 
 </script>
 </html>
 
