@@ -139,6 +139,6 @@ app.get('/template', function (req, res) {
   res.render(__dirname + '/view/views/template.ejs');
 });
 
-var port = 5000;
+var port =process.env.PORT|| 5000;
 app.listen(port);
 console.log('Listening on port ' + port + '...');

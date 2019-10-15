@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Clear Sans";
+  font-family: 'Cantata One', serif;
   src: url("fonts/ClearSans-Light-webfont.eot");
   src: url("fonts/ClearSans-Light-webfont.eot?#iefix") format("embedded-opentype"),
        url("fonts/ClearSans-Light-webfont.woff") format("woff"),
@@ -79,7 +79,7 @@ html, body, section {
 
 body {
   background: #eaeaea;
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: 'Cantata One', serif;
   font-size: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -111,12 +111,12 @@ section:after {
 
 .btn {
   padding: 0.3125rem;
-  background: #eaeaea;
-  color: #777;
-  border: 1px solid #cdcdcd;
-  border-radius: 3px;
-  font-family: "Clear Sans";
-  font-size: .75em;
+  background: yellow;
+  color: black;
+  border: 1px solid limegreen;
+  border-radius: 8px;
+  font-family: 'Cantata One', serif;
+  font-size: 15px;
   text-shadow: rgba(255,255,255,0.5) 0 1px 2px;
   text-decoration: none;
   outline: none;
@@ -124,8 +124,8 @@ section:after {
 }
 
 .btn:hover:not(.btn-active) {
-  background: #f0f0f0;
-  color: #444;
+  background: red;
+  color: white;
 }
 
 .btn-active {
@@ -398,7 +398,7 @@ html.modal-open #iframeClose {
 .jqconsole {
   padding: 10px;
   padding-bottom: 10px;
-  font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+  font-family: 'Cantata One', serif;
   font-size: 12px;
 }
 .jqconsole-cursor {

@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
   <link href="view/views/images/icon.jpg" rel="icon" type="image/x-icon" />
   <title>UC Berkeley Extension Playground</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cantata+One&display=swap" rel="stylesheet">
 
   <link href="css/cloudEditCustom.css" rel="stylesheet">
 </head>
 <style>
 
 body {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: 'Cantata One', serif;
+  background-color: white;
 }
 .windowGroup {
   background: #000;
@@ -58,12 +61,33 @@ button:hover {
 }
 </style>
 <body>
-  <button onclick="cancel()" type="button"  class="cancelbtn">Cancel</button>
-  <button id="download" type="button"  class="cancelbtn">Download Html</button>
-  <button id="clear" type="button"  class="cancelbtn">Clear</button>
-  <button id="save" type="button"  class="cancelbtn">Save Local Stroge</button>
-  <button id="load" type="button"  class="cancelbtn">load from local store</button>
-  <input class="context-menu-list" name="context-menu-input">
+  <button onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
+  <button id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
+  <button id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
+  <button id="save" type="button"  class="btn btn-outline-primary">Save Local Stroge</button>
+  <button id="load" type="button"  class="btn btn-outline-primary">Load from local store</button>
+  <button id="run" type="button"  class="btn btn-outline-primary">Run</button>
+  <!-- <input class="context-menu-list" name="context-menu-input"> -->
+  <select class="context-menu-list" >
+      <optgroup label="Css">
+        <option value="plaincss">Plaincss</option>
+        <option value="autoprefixer">Autoprefixer</option>
+       
+        <option value="sass">Pass</option>
+        <option value="less">Less</option>
+      </optgroup>
+      <optgroup label="Css Frameworks">
+        <option value="none">None</option>
+        <option value="bootstrap">Bootstrap</option>
+        <option value="foundation">Foundation</option>
+      </optgroup>
+      <optgroup label="Back">
+          <option value="normalize">Normalize CSS</option>
+          <option value="modernizr">Modernizr</option>
+          
+        </optgroup>
+    </select>
+   
   <label id="cssLabel" for="yyy"></label>
   <section style="padding:0;">
     <div class="row windowGroup" style="margin-bottom:50px;">
@@ -109,6 +133,9 @@ button:hover {
   <script src="js/jquery.ui.position.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/jqconsole.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/cloudEdit.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <script src="js/jquery-1.12.1.min.js"></script>
 <script>

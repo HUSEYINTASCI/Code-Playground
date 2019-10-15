@@ -1,4 +1,4 @@
-/*global $:false, ace:false, htmlField:false, cssField:false, jsField:false, jqconsole:false*/
+
 (function cloudEdit() {
   "use strict";
   // Globals
@@ -15,9 +15,7 @@
     liveEdit: true
   };
 
-  // ---
-  // End Globals
-
+  
    // Check if a new appcache is available on page load. If so, ask to load it.
   window.addEventListener("load", function(e) {
     window.applicationCache.addEventListener("updateready", function(e) {
@@ -85,14 +83,7 @@
         htmlField.setValue(sessionStorage.getItem("html"));
         // htmlField.clearSelection();
       } else {
-        // htmlField.setValue("<!-- Do not place html/head/body tags here.\n" +
-        //   "Insert the tags as would normally be used in your\n" +
-        //   "body element. <script> tags ARE allowed, though\n" +
-        //   "they're best placed at the end of your HTML -->\n");
-        // // htmlField.clearSelection();
-        // $(".html").one("touchstart click", function() {
-        //   htmlField.setValue("");
-        // });
+       
       }
       if (sessionStorage.getItem("css")) {
         cssField.setValue(sessionStorage.getItem("css"));
@@ -111,8 +102,7 @@
     })();
 
   })();
-  // END ACE Editor
-
+ 
   // init jqConsole
   (function initConsole() {
     var header = "Ctrl+C: abort command, Ctrl+A: start of Line, Ctrl+E: end of line.\n";
@@ -230,7 +220,6 @@
       }
     }
   };
-
   // Used by preview and download to compile editor panes and "Imports" into valid html
   function buildOutput(consoleJS) {
 
@@ -260,11 +249,11 @@
       (function loadSass() {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", "http://rawgit.com/medialize/sass.js/master/dist/sass.min.js", false);
+        xmlHttp.open("GET", "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js", false);
         xmlHttp.send(null);
         var sass = document.createElement("script");
         sass.id = "sass";
-        sass.type = "text/javascript";
+        sass.type = "text/sass";
         sass.text = xmlHttp.responseText;
         document.getElementsByTagName("head")[0].appendChild(sass);
       })();
@@ -329,6 +318,7 @@
     return html;
   }
 
+  
   // Toggle live edit/preview mode. It's sometimes slow or doesn't react well.
   $("#liveEdit").on("click", function() {
     use.liveEdit ? use.liveEdit = false:use.liveEdit = true;
@@ -478,12 +468,14 @@
             },
             "normalize": {
               "name": "Normalize CSS",
-              "type": "checkbox",
+              "radio": "css",
+              "value": "normalize",
               "selected": false
             },
             "modernizr": {
               "name": "Modernizr",
-              "type": "checkbox",
+              "radio": "css",
+              "value": "modernizr",
               "selected": false
             }
           }
@@ -696,19 +688,16 @@
           use.Foundation = true;
           use.Bootstrap = false;
           break;
+          case "normalize":
+            use.Bootstrap = false;
+            use.Foundation = false;
+            break;
+          case "modernizr":
+            use.Foundation = true;
+            use.Bootstrap = true;
+            break;
       }
-    } else {
-      var checked = $(this).is(":checked");
-      var item = event.target.name; //$(this)[0].name;
-      switch (item) {
-        case "context-menu-input-modernizr":
-          use.Modernizr = checked;
-          break;
-        case "context-menu-input-normalize":
-          use.Normalize = checked;
-          break;
-      }
-    }
+    }  
   });
 
   
