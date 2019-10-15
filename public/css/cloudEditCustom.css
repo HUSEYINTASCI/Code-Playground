@@ -111,16 +111,16 @@ section:after {
 
 .btn {
   padding: 0.3125rem;
-  background: yellow;
-  color: black;
-  border: 1px solid limegreen;
-  border-radius: 8px;
-  font-family: 'Cantata One', serif;
-  font-size: 15px;
-  text-shadow: rgba(255,255,255,0.5) 0 1px 2px;
-  text-decoration: none;
-  outline: none;
-  text-align: center;
+    background-image: linear-gradient(607deg, lightblue -127%, white);
+    color: black;
+    border: 1px solid limegreen;
+    border-radius: 8px;
+    font-family: 'Cantata One', serif;
+    font-size: 15px;
+    text-shadow: rgba(255,255,255,0.5) 0 1px 2px;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
 }
 
 .btn:hover:not(.btn-active) {
@@ -612,7 +612,4 @@ html.modal-open #iframeClose {
   text-decoration: overline!important;
 }
 
-#menu{
-  
-}
-
+ 

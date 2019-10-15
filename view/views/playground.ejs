@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Cantata+One&display=swap" rel="stylesheet">
 
   <link href="css/cloudEditCustom.css" rel="stylesheet">
+  
 </head>
 <style>
 
@@ -22,7 +23,7 @@ body {
 .windowGroup {
   background: #000;
   height: 400px;
-  margin: 45px 0 0 0;
+  margin: 1px 0 0 0;
 }
 .bar {
   padding: 8px 10px;
@@ -59,9 +60,55 @@ body {
 button:hover {
   opacity: 0.8;
 }
+.sidenav {
+  height: 8%;
+    width: 0;
+    position: fixed;
+    margin: 0 0 0 0px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow: hidden;
+    transition: 0.5s;
+    padding: 15px 0 0 0;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 </style>
 <body>
-  <button onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <button onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
   <button id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
   <button id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
   <button id="save" type="button"  class="btn btn-outline-primary">Save Local Stroge</button>
@@ -73,7 +120,7 @@ button:hover {
         <option value="plaincss">Plaincss</option>
         <option value="autoprefixer">Autoprefixer</option>
        
-        <option value="sass">Pass</option>
+        <option value="sass">Sass</option>
         <option value="less">Less</option>
       </optgroup>
       <optgroup label="Css Frameworks">
@@ -83,12 +130,19 @@ button:hover {
       </optgroup>
       <optgroup label="Back">
           <option value="normalize">Normalize CSS</option>
-          <option value="modernizr">Modernizr</option>
+          <option value="modernizr">Modernize</option>
           
         </optgroup>
     </select>
+      </div>
+      
+      <div id="main">
+         
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      </div>
+ 
    
-  <label id="cssLabel" for="yyy"></label>
+   
   <section style="padding:0;">
     <div class="row windowGroup" style="margin-bottom:50px;">
       <div class="column-33">
@@ -150,7 +204,15 @@ button:hover {
   function cancel() {
     window.location.href = "http://localhost:5000/";
  }
- 
+ function openNav() {
+  document.getElementById("mySidenav").style.width = "1243px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
 </html>
 
