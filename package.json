@@ -28,9 +28,8 @@
     "express-partial": "^0.1.0",
     "express-session": "^1.17.0",
     "jquery-contextmenu": "^2.9.0",
-    "js-alert": "^1.0.4",
     "mysql": "2.17.1",
-    "path": "^0.12.7",
-    "req-flash": "0.0.3"
+    "path": "^0.12.7"
+     
   }
 }

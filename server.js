@@ -4,10 +4,7 @@ var ejs = require('ejs')
 const mysql = require("mysql");
 var bcrypt = require('bcryptjs');
 var path = require('path');
- 
-
 var cookieParser = require('cookie-parser');
-
 var session = require('express-session');
 
 //allow sessions

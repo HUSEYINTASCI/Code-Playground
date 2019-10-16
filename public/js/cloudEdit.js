@@ -249,7 +249,7 @@
       (function loadSass() {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js", false);
+        xmlHttp.open("GET", "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.0/sass.min.js", false);
         xmlHttp.send(null);
         var sass = document.createElement("script");
         sass.id = "sass";
@@ -266,13 +266,13 @@
     html += '<head>\n';
     html += '<meta charset="UTF-8">\n';
     if (use.Normalize) {
-      html += '<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet">\n';
+      html += '<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">\n';
     }
     if (use.Bootstrap) {
-      html += '<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">\n';
+      html += '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">\n';
     }
     if (use.Foundation) {
-      html += '<link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/css/foundation.min.css" rel="stylesheet">\n';
+      html += '<link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/js/foundation.min.js" rel="stylesheet">\n';
     }
     if (use.Less) {
       html += '<style type="text/less">\n';
@@ -287,20 +287,20 @@
       html += content.style;
     }
     html += '\n</style>\n';
-    html += '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>\n';
+    html += '<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>\n';
     if (use.Bootstrap) {
-      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>\n';
+      html += '<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>\n';
     }
     if (use.Foundation) {
-      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation/foundation.min.js"></script>\n';
+      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/js/foundation.min.js"></script>\n';
     }
     if (use.Modernizr) {
-      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>\n';
+      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>\n';
     }
     if (use.Less) {
       // Set LESS global variable to turn errorReporting off and mode to production
       html += '<script>\nless={env: "production", errorReporting: null}\n</script>\n';
-      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>\n';
+      html += '<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.10.3/less.min.js"></script>\n';
     }
     html += '</head>\n';
     html += '<body>\n';
