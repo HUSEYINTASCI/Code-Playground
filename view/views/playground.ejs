@@ -7,8 +7,7 @@
   <link href="view/views/images/icon.jpg" rel="icon" type="image/x-icon" />
   <title>UC Berkeley Extension Playground</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Cantata+One&display=swap" rel="stylesheet">
 
   <link href="css/cloudEditCustom.css" rel="stylesheet">
@@ -23,7 +22,7 @@ body {
 .windowGroup {
   background: #000;
   height: 400px;
-  margin: 1px 0 0 0;
+  margin: 23px 0 0 0;
 }
 .bar {
   padding: 8px 10px;
@@ -63,7 +62,7 @@ button:hover {
 .sidenav {
   height: 8%;
     width: 0;
-    position: fixed;
+    position: absolute;
     margin: 0 0 0 0px;
     z-index: 100;
     top: 0;
@@ -92,7 +91,7 @@ button:hover {
   top: 0;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
+  
 }
 
 #main {
@@ -108,23 +107,20 @@ button:hover {
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <button onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
-  <button id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
-  <button id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
-  <button id="save" type="button"  class="btn btn-outline-primary">Save to Local Storage</button>
-  <button id="load" type="button"  class="btn btn-outline-primary">Load from Local Storage</button>
-  <button id="run" type="button"  class="btn btn-outline-primary">Run</button>
+        <button data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
+  <button data-toggle="tooltip" title="Downloads your code as an index.html file" id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
+  <button data-toggle="tooltip" title="Clears your HTML, CSS, or Javascript from the screen " id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
+  <button data-toggle="tooltip" title="Saves your code to local storage on Google Chrome" id="save" type="button"  class="btn btn-outline-primary">Save to Local Storage</button>
+  <button data-toggle="tooltip" title="Loads your last stored code" id="load" type="button"  class="btn btn-outline-primary">Load from Local Storage</button>
+  <button id="run" type="button"  class="btn btn-outline-primary">Run The Code</button>
   <!-- <input class="context-menu-list" name="context-menu-input"> -->
   <select class="context-menu-list" >
     <optgroup label="CSS Frameworks">
         <option value="plaincss">Plain CSS</option>
         <option value="autoprefixer">Autoprefixer</option>
-       
         <option value="sass">Sass</option>
         <option value="less">Less</option>
-    
-      
-        <option value="none">None</option>
+        <option value="none">No CSS Framework</option>
         <option value="bootstrap">Bootstrap</option>
         <option value="foundation">Foundation</option>
       </optgroup>
@@ -205,7 +201,7 @@ button:hover {
     window.location.href = "http://localhost:5000/";
  }
  function openNav() {
-  document.getElementById("mySidenav").style.width = "1243px";
+  document.getElementById("mySidenav").style.width = "1391px";
   document.getElementById("main").style.marginLeft = "250px";
 }
 
@@ -213,6 +209,10 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
 </script>
 </html>
 
