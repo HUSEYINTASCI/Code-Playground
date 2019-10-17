@@ -67,7 +67,7 @@ app.post("/signin", function (req, res) {
           
         
           
-          res.redirect('http://localhost:5000/playground');
+          res.redirect('/playground');
         
         } else {
 
