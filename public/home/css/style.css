@@ -314,9 +314,10 @@ a:focus, .button:focus, button:focus, .btn:focus {
 
 /* line 178 */
 ul {
-  list-style: none;
   margin: 0;
-  padding: 0;
+    padding: 0;
+    font-family: initial;
+    font-size: 19px;
 }
 
 /* line 183 */
@@ -749,7 +750,7 @@ ul {
 .hero-app-8 {
   position: absolute;
   left: 56%;
-  top: 73%;
+  top: 76%;
 }
 
 @media (max-width: 576px) {
@@ -762,7 +763,7 @@ ul {
 /**************** common css end ****************/
 /* Main Button Area css
 ============================================================================================ */
-/* line 3, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 3, */
 .submit_btn {
   width: auto;
   display: inline-block;
@@ -782,12 +783,12 @@ ul {
   transition: 0.5s;
 }
 
-/* line 19, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 19, */
 .submit_btn:hover {
   background: transparent;
 }
 
-/* line 25, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 25, */
 .dropdown .dropdown-menu {
   transition: all 0.5s;
   overflow: hidden;
@@ -797,12 +798,12 @@ ul {
   margin-top: 28px;
 }
 
-/* line 34, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 34, */
 .dropdown:hover .dropdown-menu {
   transform: scale(1);
 }
 
-/* line 39, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 39, */
 .btn_1 {
   display: inline-block;
   padding: 14px 40px;
@@ -817,14 +818,14 @@ ul {
   background-size: 300% 100%;
 }
 
-/* line 52, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 52, */
 .btn_1:hover {
   color: #fff !important;
   background-size: 100% 100%;
 }
 
 @media (max-width: 576px) {
-  /* line 39, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 39, */
   .btn_1 {
     padding: 14px 30px;
     margin-top: 25px;
@@ -832,7 +833,7 @@ ul {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /* line 39, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 39, */
   .btn_1 {
     padding: 14px 30px;
     margin-top: 30px;
@@ -840,14 +841,14 @@ ul {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 39, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 39, */
   .btn_1 {
     padding: 14px 30px;
     margin-top: 30px;
   }
 }
 
-/* line 74, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 74, */
 .btn_2 {
   display: inline-block;
   padding: 13px 47px;
@@ -862,14 +863,14 @@ ul {
   background-size: 300% 100%;
 }
 
-/* line 86, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 86, */
 .btn_2:hover {
   color: #fff !important;
   background-size: 100% 100%;
 }
 
 @media (max-width: 576px) {
-  /* line 74, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 74, */
   .btn_2 {
     padding: 14px 30px;
     margin-top: 25px;
@@ -877,7 +878,7 @@ ul {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /* line 74, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 74, */
   .btn_2 {
     padding: 14px 30px;
     margin-top: 30px;
@@ -885,14 +886,14 @@ ul {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 74, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 74, */
   .btn_2 {
     padding: 14px 30px;
     margin-top: 30px;
   }
 }
 
-/* line 107, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 107, */
 .btn_4 {
   display: inline-block;
   padding: 13px 47px;
@@ -906,34 +907,34 @@ ul {
   background-size: 300% 100%;
 }
 
-/* line 118, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 118, */
 .btn_4:hover {
   color: #fff;
   background-size: 100% 100%;
 }
 
 @media (max-width: 576px) {
-  /* line 107, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 107, */
   .btn_4 {
     padding: 14px 30px;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /* line 107, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 107, */
   .btn_4 {
     padding: 14px 30px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 107, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 107, */
   .btn_4 {
     padding: 14px 30px;
   }
 }
 
-/* line 136, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 136, */
 .btn_3 {
   position: relative;
   font-weight: 500;
@@ -948,7 +949,7 @@ ul {
   font-family: "Poppins", sans-serif;
 }
 
-/* line 148, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 148, */
 .btn_3:after {
   height: 48px;
   width: 61px;
@@ -963,14 +964,14 @@ ul {
   transition: .6s;
 }
 
-/* line 161, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 161, */
 .btn_3 i {
   font-size: 12px;
   margin-left: 11px;
 }
 
 /*=================== custom button rule start ====================*/
-/* line 168, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 168, */
 .button {
   display: inline-block;
   border: 1px solid transparent;
@@ -988,19 +989,19 @@ ul {
 }
 
 @media (max-width: 767px) {
-  /* line 168, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+  /* line 168, */
   .button {
     font-size: 13px;
     padding: 9px 24px;
   }
 }
 
-/* line 187, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 187, */
 .button:hover {
   color: #fff;
 }
 
-/* line 192, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 192, */
 .button-link {
   letter-spacing: 0;
   color: #3b1d82;
@@ -1008,25 +1009,25 @@ ul {
   padding: 0;
 }
 
-/* line 198, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 198, */
 .button-link:hover {
   background: transparent;
   color: #3b1d82;
 }
 
-/* line 204, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 204, */
 .button-header {
   color: #fff;
   border-color: #fdcb9e;
 }
 
-/* line 208, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 208, */
 .button-header:hover {
   background: #b8024c;
   color: #fff;
 }
 
-/* line 214, E:/167 Bizcon Business/Bizcon_html/sass/_button.scss */
+/* line 214, */
 .button-contactForm {
   color: #fff;
   border-color: #fdcb9e;
