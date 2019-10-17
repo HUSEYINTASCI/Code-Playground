@@ -4,9 +4,11 @@ Challenge yourself by learning how to code while you are having fun in the playg
 
 
 Home Page
-![alt text](https://github.com/HUSEYINTASCI/Code-Playground/tree/master/public/home/Home.gif)
+![alt text](https://github.com/HUSEYINTASCI/Code-Playground/blob/master/public/home/img/Home.gif)
+
+          
 
 
 
 Playground Page
-![alt text](https://github.com/HUSEYINTASCI/Code-Playground/tree/master/public/home/img/Playground.gif)
+![alt text](https://github.com/HUSEYINTASCI/Code-Playground/blob/master/public/home/img/Playground.gif)
