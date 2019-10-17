@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="view/views/images/icon.jpg" rel="icon" type="image/x-icon" />
-  <title>UC Berkeley Extension Playground</title>
+  <title>UC Berkeley Extension Code Playground</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Cantata+One&display=swap" rel="stylesheet">
@@ -105,15 +105,17 @@ button:hover {
 }
 </style>
 <body>
+    <p id="usrr"></p>
+ 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <button data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
+        <button id="log" data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
   <button data-toggle="tooltip" title="Downloads your code as an index.html file" id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
   <button data-toggle="tooltip" title="Clears your HTML, CSS, or Javascript from the screen " id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
   <button data-toggle="tooltip" title="Saves your code to local storage on Google Chrome" id="save" type="button"  class="btn btn-outline-primary">Save to Local Storage</button>
   <button data-toggle="tooltip" title="Loads your last stored code" id="load" type="button"  class="btn btn-outline-primary">Load from Local Storage</button>
   <button id="run" type="button"  class="btn btn-outline-primary">Run The Code</button>
-  <!-- <input class="context-menu-list" name="context-menu-input"> -->
+
   <select class="context-menu-list" >
     <optgroup label="CSS Frameworks">
         <option value="plaincss">Plain CSS</option>
@@ -159,6 +161,7 @@ button:hover {
           <pre id="js"><%- include('js/js.ejs') %></pre>
         </div>
       </div>
+      
     </div>
 
     <div class="row console" style="display:none;">
@@ -174,7 +177,7 @@ button:hover {
         allowtransparency="true">
       </iframe>
     </div>
-<div id="menu"></div>
+ 
   </section>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -211,8 +214,10 @@ function closeNav() {
 }
 
 $(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
+  $('[data-toggle="tooltip"]').tooltip;   
 });
+
+
 </script>
 </html>
 

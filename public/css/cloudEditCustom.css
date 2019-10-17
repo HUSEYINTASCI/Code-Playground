@@ -611,5 +611,16 @@ html.modal-open #iframeClose {
 .jqconsole-ansi-overline {
   text-decoration: overline!important;
 }
-
+#usrr{
+  position: absolute;
+    margin: 61px 0 0 80px;
+    -webkit-animation: linear 100s infinite alternate;
+    -webkit-animation-name: run;
+-webkit-animation-duration: 30s;
+}
+@-webkit-keyframes run {
+  0% { left: 0;}
+  50%{ left : 30%;}
+  100%{ left: 10%;}
+}
  

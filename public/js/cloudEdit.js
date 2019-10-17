@@ -1,9 +1,7 @@
 
 (function cloudEdit() {
   "use strict";
-  // Globals
-  // ---
-  // For buildOutput() creation. Toggle includes in html output.
+  
   var use = {
     Autoprefixer: false,
     Less: false,
@@ -14,7 +12,7 @@
     Foundation: false,
     liveEdit: true
   };
-
+  
   
    // Check if a new appcache is available on page load. If so, ask to load it.
   window.addEventListener("load", function(e) {
@@ -25,20 +23,15 @@
           window.location.reload();
         }
       } else {
-        // Manifest didn't changed. Do NOTHING!
+        
       }
     }, false);
   }, false);
 
   // Create Text Area panes
-  // Init ACE Editor and set options;
   (function initAce() {
     var aceTheme;
-    // if (localStorage.getItem("theme")) {
-    //   aceTheme = localStorage.getItem("theme");
-    // } else {
       aceTheme = "ace/theme/merbivore";
-    // }
 
     // HTML Editor
     window.htmlField = ace.edit("html");
@@ -52,8 +45,23 @@
       showPrintMargin: false,
       enableEmmet: true
     });
+// User Login
+     var uname= $("#usrr");
+  var b=  localStorage.getItem("user");
+  if (b==null) {
+    uname.text("Hello Guest user you must have an account to Download , Save Local St. and Load Local St. code. " );
+  } else {
+    uname.text("Hello "+b);
+    $("#log").text("Log Out");
+  }
 
-
+  if (b==null) {
+    $("#download").css("display","none");
+    $("#save").css("display","none");
+    $("#load").css("display","none");
+    
+  }
+ 
     // CSS Editor
     window.cssField = ace.edit("css");
     cssField.setOptions({
@@ -103,75 +111,6 @@
 
   })();
  
-  // init jqConsole
-  (function initConsole() {
-    var header = "Ctrl+C: abort command, Ctrl+A: start of Line, Ctrl+E: end of line.\n";
-
-    // Creating the console.
-    window.jqconsole = $("#console").jqconsole(header);
-    jqconsole.SetIndentWidth(2);
-
-    // Abort prompt on Ctrl+C.
-    jqconsole.RegisterShortcut("C", function() {
-      jqconsole.AbortPrompt();
-      handler();
-    });
-    // Move to line start Ctrl+A.
-    jqconsole.RegisterShortcut("A", function() {
-      jqconsole.MoveToStart();
-      handler();
-    });
-    // Move to line end Ctrl+E.
-    jqconsole.RegisterShortcut("E", function() {
-      jqconsole.MoveToEnd();
-      handler();
-    });
-    jqconsole.RegisterMatching("{", "}", "brace");
-    jqconsole.RegisterMatching("(", ")", "paran");
-    jqconsole.RegisterMatching("[", "]", "bracket");
-
-    // console.log implementation
-    window.log = function(message) {
-      var data = "";
-      if (typeof message == "object") {
-        data = JSON && JSON.stringify ? JSON.stringify(message) : String(message);
-      } else {
-        data = message;
-      }
-      jqconsole.Write("==> " + data + "\n");
-    };
-
-    // Handle a command.
-    var handler = function(command) {
-      if (command) {
-        if (command.search("console.log" !== -1)) {
-          command = command.replace("console.log", "log");
-        }
-        try {
-          jqconsole.Write("==> " + window.eval(command) + "\n");
-        } catch (e) {
-          jqconsole.Write("ReferenceError: " + e.message + "\n");
-        }
-      }
-      jqconsole.Prompt(true, handler, function(command) {
-        // Continue line if can't compile the command.
-        try {
-          new Function(command);
-        } catch (e) {
-          if (/[\[\{\(]$/.test(command)) {
-            return 1;
-          } else {
-            return 0;
-          }
-        }
-        return false;
-      });
-    };
-    // Initiate the first prompt.
-    handler();
-  })();
-  // END jqconsole
-
   // Toggle Text Areas from Displaying
   $(".togglePane").on("click", function() {
     panes.close(this);
@@ -326,7 +265,6 @@
   });
 
   // Publish output from HTML, CSS, and JS textareas in the iframe below
-  // after given keyup delay if "use.liveEdit: true".
   htmlField.getSession().on("change", function(e) {
     $('.html-container').remove();
     if (use.liveEdit) preview(1000);
@@ -353,13 +291,12 @@
     }
     timer = window.setTimeout(function() {
       timer = null;
-      // pass true as we want the pseudo console.js script
-      //console.time('buildOutput'); // start timer for debugging
+       
       var textToWrite = buildOutput(true);
 
       (document.getElementById("iframe").contentWindow.document).write(textToWrite);
       (document.getElementById("iframe").contentWindow.document).close();
-      //console.timeEnd('buildOutput'); // end timer for debugging
+      
     }, delay);
   }
 
@@ -518,42 +455,6 @@
                     updateTheme("chrome");
                   }
                 },
-                "dreamweaver": {
-                  "name": "Dreamweaver",
-                  "callback": function() {
-                    updateTheme("dreamweaver");
-                  }
-                },
-                "dawn": {
-                  "name": "Dawn",
-                  "callback": function() {
-                    updateTheme("dawn");
-                  }
-                },
-                "tomorrow": {
-                  "name": "Tomorow",
-                  "callback": function() {
-                    updateTheme("tomorrow");
-                  }
-                },
-                "xcode": {
-                  "name": "XCode",
-                  "callback": function() {
-                    updateTheme("xcode");
-                  }
-                },
-                "kuroir": {
-                  "name": "Kuroir",
-                  "callback": function() {
-                    updateTheme("kuroir");
-                  }
-                },
-                "katzenmilch": {
-                  "name": "KatzenMilch",
-                  "callback": function() {
-                    updateTheme("katzenmilch");
-                  }
-                }
               }
             },
             "dark": {
@@ -564,49 +465,13 @@
                   "callback": function() {
                     updateTheme("ambiance");
                   }
-                },
-                "cloudsmidnight": {
-                  "name": "Clouds Midight",
-                  "callback": function() {
-                    updateTheme("clouds_midnight");
-                  }
-                },
-                "idlefingers": {
-                  "name": "Idle Fingers",
-                  "callback": function() {
-                    updateTheme("idle_fingers");
-                  }
-                },
+                }, 
                 "merbivore": {
                   "name": "Merbivore",
                   "callback": function() {
                     updateTheme("merbivore");
                   }
                 },
-                "merbivoresoft": {
-                  "name": "Merbivore Soft",
-                  "callback": function() {
-                    updateTheme("merbivore_soft");
-                  }
-                },
-                "monokai": {
-                  "name": "Monokai",
-                  "callback": function() {
-                    updateTheme("monokai");
-                  }
-                },
-                "tomorrownight": {
-                  "name": "Tomorrow Night",
-                  "callback": function() {
-                    updateTheme("tomorrow_night");
-                  }
-                },
-                "twilight": {
-                  "name": "Twilight",
-                  "callback": function() {
-                    updateTheme("twilight");
-                  }
-                }
               }
             },
             "default": {

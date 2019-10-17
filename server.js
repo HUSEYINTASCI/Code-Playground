@@ -21,13 +21,19 @@ app.use(bodyParser());
 
 
 //Mysql connection
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "345876",
-  database: "cplayground_db"
-});
+if (process.env.JAWSDB_URL) {
+  var connection=mysql.createConnection(process.env.JAWSDB_URL)
+  
+} else {
+  var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "345876",
+    database: "cplayground_db"
+  });
+}
+
 
 connection.connect(function (err) {
   if (err) {
@@ -35,7 +41,7 @@ connection.connect(function (err) {
   }
 });
 // -------------------------------------------------------------------------------------------------
-
+ 
 // Signin
 
 app.post("/signin", function (req, res) {
@@ -50,20 +56,22 @@ app.post("/signin", function (req, res) {
        res.send(" Email or password not correct!. Please  <a style="+"color:"+"red"+"; href="+"signin.html"+"> Try again</a> ");
 
     } else {
+       
       bcrypt.compare(password, results[0].u_password, function (err, result) {
-
+   
 
         if (result == true) {
 
           req.session.id = results[0].u_id;
           req.session.email = results[0].u_email;
-      
-
+          
+        
+          
           res.redirect('http://localhost:5000/playground');
         
         } else {
 
-          res.send('Connection Error!');
+          res.send("Connection Error!.Please  <a style="+"color:"+"red"+"; href="+"signin.html"+"> Try again</a>");
         }
       });
     }
