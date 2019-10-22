@@ -40,7 +40,7 @@
 }
 
 .row {
-  margin: 0 -0.75em;
+ 
 }
 
 .row [class*="column-"] {
@@ -97,8 +97,7 @@ section {
   background: #fff;
   width: 100%;
   padding: 1rem;
-  -webkit-box-shadow: rgba(0,0,0,.15) 0 15px 50px;
-  box-shadow: rgba(0,0,0,.15) 0 15px 50px;
+ 
 }
 
 section:after {
@@ -303,22 +302,14 @@ pre {
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  margin: 0.75em 0 0 0;
+ 
   border: 1px solid #cdcdcd;
   border-radius: 3px;
   -webkit-box-shadow: inset rgba(0,0,0,.05) 0 3px 10px;
   box-shadow: inset rgba(0,0,0,.05) 0 3px 10px;
   height: 37.5rem;
   top: 100%;
-/*  -webkit-transition-property: top;
-    -moz-transition-property: top;
-      transition-property: top;
-  -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-      transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-      transition-timing-function: ease-in-out;*/
+ 
 }
 
 html.modal-open .preview{
@@ -523,37 +514,7 @@ html.modal-open #iframeClose {
   text-decoration: line-through;
 }
 
-.jqconsole-ansi-fonts-1 {
 
-}
-.jqconsole-ansi-fonts-2 {
-
-}
-.jqconsole-ansi-fonts-3 {
-
-}
-.jqconsole-ansi-fonts-4 {
-
-}
-.jqconsole-ansi-fonts-5 {
-
-}
-.jqconsole-ansi-fonts-6 {
-
-}
-.jqconsole-ansi-fonts-7 {
-
-}
-.jqconsole-ansi-fonts-8 {
-
-}
-.jqconsole-ansi-fonts-9 {
-
-}
-
-.jqconsole-ansi-fraktur {
-
-}
 
 .jqconsole-ansi-color-black {
   color: black!important;
@@ -623,4 +584,19 @@ html.modal-open #iframeClose {
   50%{ left : 30%;}
   100%{ left: 10%;}
 }
- 
+ #temp{
+       width: 59px;
+    position: absolute;
+    margin: 11px 0 0 1246px;
+ }
+
+ .btnimg{
+  width: 50px;
+ }
+
+ #tempb{
+  width: 59px;
+position: absolute;
+margin: 11px 0 0 1246px;
+display: none;
+}

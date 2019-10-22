@@ -1,7 +1,7 @@
 
 (function cloudEdit() {
   "use strict";
-  
+
   var use = {
     Autoprefixer: false,
     Less: false,
@@ -12,18 +12,18 @@
     Foundation: false,
     liveEdit: true
   };
-  
-  
-   // Check if a new appcache is available on page load. If so, ask to load it.
-  window.addEventListener("load", function(e) {
-    window.applicationCache.addEventListener("updateready", function(e) {
+
+
+  // Check if a new appcache is available on page load. If so, ask to load it.
+  window.addEventListener("load", function (e) {
+    window.applicationCache.addEventListener("updateready", function (e) {
       if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
         // Browser downloaded a new app cache.
         if (confirm("A new version of this site is available. Load it?")) {
           window.location.reload();
         }
       } else {
-        
+
       }
     }, false);
   }, false);
@@ -31,7 +31,7 @@
   // Create Text Area panes
   (function initAce() {
     var aceTheme;
-      aceTheme = "ace/theme/merbivore";
+    aceTheme = "ace/theme/merbivore";
 
     // HTML Editor
     window.htmlField = ace.edit("html");
@@ -45,23 +45,23 @@
       showPrintMargin: false,
       enableEmmet: true
     });
-// User Login
-     var uname= $("#usrr");
-  var b=  localStorage.getItem("user");
-  if (b==null) {
-    uname.text("Hello Guest user you must have an account to Download , Save Local St. and Load Local St. code. " );
-  } else {
-    uname.text("Hello "+b);
-    $("#log").text("Log Out");
-  }
+    // User Login
+    var uname = $("#usrr");
+    var b = localStorage.getItem("user");
+    if (b == null) {
+      uname.text("Hello Guest user you must have an account to Download , Save Local St. and Load Local St. code. ");
+    } else {
+      uname.text("Hello " + b);
+      $("#log").text("Log Out");
+    }
 
-  if (b==null) {
-    $("#download").css("display","none");
-    $("#save").css("display","none");
-    $("#load").css("display","none");
-    
-  }
- 
+    if (b == null) {
+      $("#download").css("display", "none");
+      $("#save").css("display", "none");
+      $("#load").css("display", "none");
+
+    }
+
     // CSS Editor
     window.cssField = ace.edit("css");
     cssField.setOptions({
@@ -91,7 +91,7 @@
         htmlField.setValue(sessionStorage.getItem("html"));
         // htmlField.clearSelection();
       } else {
-       
+
       }
       if (sessionStorage.getItem("css")) {
         cssField.setValue(sessionStorage.getItem("css"));
@@ -110,32 +110,32 @@
     })();
 
   })();
- 
+
   // Toggle Text Areas from Displaying
-  $(".togglePane").on("click", function() {
+  $(".togglePane").on("click", function () {
     panes.close(this);
   });
-  $("#consoleToggle").on("click", function() {
+  $("#consoleToggle").on("click", function () {
     $(this).toggleClass("btn-active");
     $(".console").toggle();
   });
-  $("#previewToggle, #iframeClose").on("click", function() {
+  $("#previewToggle, #iframeClose").on("click", function () {
     $("#previewToggle").toggleClass("btn-active");
     $("html").toggleClass("modal-open");
   });
 
   var panes = {
     // Return the number of editor panes displayed
-    count: function() {
+    count: function () {
       var count = 3;
       var items = $(".windowGroup .column-33");
-      items.each(function(el) {
+      items.each(function (el) {
         if ($(items[el]).css("display") === "none") count -= 1;
       });
       return count;
     },
     // Resize panes based upon number currently toggled ON
-    resize: function() {
+    resize: function () {
       var count = this.count();
       var win = $(".windowGroup .column-33");
       if (count === 3 || count === 0) {
@@ -147,7 +147,7 @@
       }
     },
     // On toggling an editor pane resize remaining and toggle button class
-    close: function(el) {
+    close: function (el) {
       var name = el.dataset.editor;
       var count = this.count();
       if (count > 1 || $(el).hasClass("btn-active")) {
@@ -176,7 +176,7 @@
         xmlHttp.open("GET", "http://rawgit.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js", false);
         xmlHttp.send(null);
         var ap = document.createElement("script");
-        ap.type ="text/javascript";
+        ap.type = "text/javascript";
         ap.text = xmlHttp.responseText;
         document.getElementsByTagName("head")[0].appendChild(ap);
       })();
@@ -257,29 +257,29 @@
     return html;
   }
 
-  
+
   // Toggle live edit/preview mode. It's sometimes slow or doesn't react well.
-  $("#liveEdit").on("click", function() {
-    use.liveEdit ? use.liveEdit = false:use.liveEdit = true;
+  $("#liveEdit").on("click", function () {
+    use.liveEdit ? use.liveEdit = false : use.liveEdit = true;
     $(this).toggleClass("btn-active");
   });
 
   // Publish output from HTML, CSS, and JS textareas in the iframe below
-  htmlField.getSession().on("change", function(e) {
+  htmlField.getSession().on("change", function (e) {
     $('.html-container').remove();
     if (use.liveEdit) preview(1000);
   });
-  cssField.getSession().on("change", function(e) {
+  cssField.getSession().on("change", function (e) {
     $('.html-container').remove();
     if (use.liveEdit) preview(2000);
   });
-  jsField.getSession().on("change", function(e) {
+  jsField.getSession().on("change", function (e) {
     $('.html-container').remove();
     if (use.liveEdit) preview(2000);
   });
-  
+
   // Update preview window AND js console on click of "Run" button
-  $("#run").on("click", function() {
+  $("#run").on("click", function () {
     preview();
   });
 
@@ -289,20 +289,20 @@
     if (timer) {
       window.clearTimeout(timer);
     }
-    timer = window.setTimeout(function() {
+    timer = window.setTimeout(function () {
       timer = null;
-       
+
       var textToWrite = buildOutput(true);
 
       (document.getElementById("iframe").contentWindow.document).write(textToWrite);
       (document.getElementById("iframe").contentWindow.document).close();
-      
+
     }, delay);
   }
 
   // Download HTML/CSS/JS
-  
-  $("#download").on("click", function() {
+
+  $("#download").on("click", function () {
 
     function destroyClickedElement(event) {
       document.body.removeChild(event.target);
@@ -312,7 +312,7 @@
 
     // pass false as we don't want the pseudo console.js script
     var textToWrite = buildOutput(false);
-    var textFileAsBlob = new Blob([textToWrite], {type: "text/plain"});
+    var textFileAsBlob = new Blob([textToWrite], { type: "text/plain" });
     var fileNameToSaveAs = "index.html";
 
     $download.download = fileNameToSaveAs;
@@ -325,13 +325,13 @@
       $download.href = window.URL.createObjectURL(textFileAsBlob);
     }
     $download.onclick = destroyClickedElement;
-		$download.style.display = "none";
-		document.body.appendChild($download);
+    $download.style.display = "none";
+    document.body.appendChild($download);
     $download.click();
   });
 
   // Clear editors with "Clear" button
-  $("#clear").on("click", function() {
+  $("#clear").on("click", function () {
     htmlField.setValue("");
     cssField.setValue("");
     jsField.setValue("");
@@ -340,8 +340,52 @@
     (document.getElementById("iframe").contentWindow.document).close();
   });
 
+
+  //Template
+
+  $("#temp").on("click", function () {
+
+    $(".row [class*=" + "column-" + "] ").css("display", "block");
+    $(".windowGroup").css("height", "0");
+    $(".preview").css({
+      "width": "66%",
+       "position": "relative", 
+       "-webkit-appearance": "none",
+         "border": "1px solid greenyellow",
+          "-webkit-box-shadow": "none !important",
+           "height": "71.5rem"
+    });
+    $(".preview").css("margin","0 0 0 505px");
+    $("#temp").css("display", "none");
+
+    $("#tempb").css("display", "block");
+  });
+
+
+  $("#tempb").on("click", function () {
+    $(".row [class*=" + "column-" + "] ").css("display", "inline-block");
+    $(".windowGroup").css("height", "400px");
+    $(".preview").css({
+      "width": "100%",
+      "position": "relative",
+      "-webkit-appearance": "none",
+      "margin": "0.75em 0 0 0",
+      "border": "none !important",
+      "border-radius": "3px",
+      "-webkit-box-shadow": "none !important",
+      "box-shadow": "none !important",
+      "height": "37.5rem",
+      "top": "100%"
+    });
+
+    $("#temp").css("display", "block");
+
+    $("#tempb").css("display", "none");
+  });
+
+  //------------------------------------------------------------------------------------------------------------------------------------------
   // Save current editor panes to localStorage
-  $("#save").on("click", function() {
+  $("#save").on("click", function () {
     var store = {
       html: htmlField.getValue(),
       css: cssField.getValue(),
@@ -351,7 +395,7 @@
   });
 
   // Load into editors from localStorage if exists
-  $("#load").on("click", function() {
+  $("#load").on("click", function () {
     var store;
     if (localStorage.cloudEdit) {
       store = JSON.parse(localStorage.cloudEdit);
@@ -376,7 +420,7 @@
           "name": "CSS Options",
           "items": {
             "plaincss": {
-              "name":"Plain CSS [Default]",
+              "name": "Plain CSS [Default]",
               "type": "radio",
               "radio": "css",
               "value": "plaincss",
@@ -451,7 +495,7 @@
               "items": {
                 "chrome": {
                   "name": "Chrome [Default]",
-                  "callback": function() {
+                  "callback": function () {
                     updateTheme("chrome");
                   }
                 },
@@ -462,13 +506,13 @@
               "items": {
                 "ambiance": {
                   "name": "Ambiance",
-                  "callback": function() {
+                  "callback": function () {
                     updateTheme("ambiance");
                   }
-                }, 
+                },
                 "merbivore": {
                   "name": "Merbivore",
-                  "callback": function() {
+                  "callback": function () {
                     updateTheme("merbivore");
                   }
                 },
@@ -476,7 +520,7 @@
             },
             "default": {
               "name": "Default",
-              "callback": function() {
+              "callback": function () {
                 updateTheme("chrome");
               }
             }
@@ -484,7 +528,7 @@
         }
       },
       events: {
-        show: function(opt) {
+        show: function (opt) {
           // this is the trigger element
           var $this = this;
           // import states from data store IF set. If we don't check this
@@ -493,7 +537,7 @@
             $.contextMenu.setInputValues(opt, $this.data());
           }
         },
-        hide: function(opt) {
+        hide: function (opt) {
           // this is the trigger element
           var $this = this;
           // export states to data store
@@ -507,7 +551,7 @@
   // and update "global" variable "use" in order to build
   // preview window
   // $("input[name*='context-menu-input']").on("click", function() {
-  $(".context-menu-list").on("click" , function() {
+  $(".context-menu-list").on("click", function () {
     var val = $(this).val();
     if (val) {
       switch (val) {
@@ -553,19 +597,19 @@
           use.Foundation = true;
           use.Bootstrap = false;
           break;
-          case "normalize":
-            use.Bootstrap = false;
-            use.Foundation = false;
-            break;
-          case "modernizr":
-            use.Foundation = true;
-            use.Bootstrap = true;
-            break;
+        case "normalize":
+          use.Bootstrap = false;
+          use.Foundation = false;
+          break;
+        case "modernizr":
+          use.Foundation = true;
+          use.Bootstrap = true;
+          break;
       }
-    }  
+    }
   });
 
-  
+
 
   // Detect a user leaving a page and display a message
   window.onbeforeunload = function (e) {

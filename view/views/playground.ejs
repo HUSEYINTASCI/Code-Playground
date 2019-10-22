@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="../views/images/icon.jpg" rel="icon" type="image/x-icon" />
+  <link href="../home/img/icon.jpg" rel="icon" type="image/x-icon" />
   <title>UC Berkeley Extension Code Playground</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -43,7 +43,6 @@ body {
   width: 100%;
     position: relative;
     -webkit-appearance: none;
-    margin: 0.75em 0 0 0;
     border: none !important;
     border-radius: 3px;
     -webkit-box-shadow: none !important;
@@ -105,12 +104,12 @@ button:hover {
 }
 </style>
 <body>
-    <p id="usrr"></p>
+ 
  
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <button id="log" data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
-  <button data-toggle="tooltip" title="Downloads your code as an index.html file" id="download" type="button"  class="btn btn-outline-primary"> Download HTML/CSS/JS</button>
+  <button data-toggle="tooltip" title="Downloads your code as an index.html file" id="download" type="button"  class="btn btn-outline-primary">Download HTML/CSS/JS</button>
   <button data-toggle="tooltip" title="Clears your HTML, CSS, or Javascript from the screen " id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
   <button data-toggle="tooltip" title="Saves your code to local storage on Google Chrome" id="save" type="button"  class="btn btn-outline-primary">Save to Local Storage</button>
   <button data-toggle="tooltip" title="Loads your last stored code" id="load" type="button"  class="btn btn-outline-primary">Load from Local Storage</button>
@@ -133,9 +132,9 @@ button:hover {
         </optgroup>
     </select>
       </div>
-      
+      <div id="temp" ><img class="btnimg" src="../home/img/btn3.png" alt="btn1"> Rotate</div>
+      <div id="tempb" ><img class="btnimg" src="../home/img/btn2.png" alt="btn1"> Rotate</div>
       <div id="main">
-         
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
       </div>
  
@@ -143,6 +142,7 @@ button:hover {
    
   <section style="padding:0;">
     <div class="row windowGroup" style="margin-bottom:50px;">
+     <div id="code">
       <div class="column-33">
         <div class="bar">HTML</div>
         <div class="window html">
@@ -161,7 +161,7 @@ button:hover {
           <pre id="js"><%- include js/js.ejs %></pre>
         </div>
       </div>
-      
+    </div>
     </div>
 
     <div class="row console" style="display:none;">
@@ -177,8 +177,10 @@ button:hover {
         allowtransparency="true">
       </iframe>
     </div>
- 
   </section>
+
+  
+ 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/ace/ext-emmet.js" type="text/javascript" charset="utf-8"></script>
