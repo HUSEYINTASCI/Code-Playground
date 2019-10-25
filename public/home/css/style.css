@@ -318,6 +318,7 @@ ul {
     padding: 0;
     font-family: initial;
     font-size: 19px;
+    float: left;
 }
 
 /* line 183 */
@@ -852,14 +853,14 @@ ul {
 .btn_2 {
   display: inline-block;
   padding: 13px 47px;
-  box-shadow: 0px 12px 20px 0px rgba(255, 126, 95, 0.15);
+  
   font-size: 14px;
-  color: #fff;
+  
   text-transform: capitalize;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 50px;
-  margin-top: 45px;
+   
   background-size: 300% 100%;
 }
 
@@ -943,26 +944,12 @@ ul {
   z-index: 9;
   -webkit-transition: .6s;
   transition: .6s;
-  line-height: 46px;
+   
   padding-left: 30px;
-  margin-top: 35px;
-  font-family: "Poppins", sans-serif;
+   
+   
 }
-
-/* line 148, */
-.btn_3:after {
-  height: 48px;
-  width: 61px;
-  background-color: #e3f1da;
-  position: absolute;
-  content: "";
-  top: 0px;
-  left: 0px;
-  border-radius: 5px;
-  z-index: -1;
-  -webkit-transition: .6s;
-  transition: .6s;
-}
+ 
 
 /* line 161, */
 .btn_3 i {
@@ -6267,4 +6254,9 @@ h1, h2, h3, h4, h5, h6 {
 .teampic{
 
   border-radius: 145px;
+}
+
+.bimg{
+width: 30px;
+margin: -9px 0 -9px -21px;
 }

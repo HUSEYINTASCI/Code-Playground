@@ -12,6 +12,32 @@
 
   <link href="css/cloudEditCustom.css" rel="stylesheet">
   
+
+
+
+  <link rel="stylesheet" href="../home/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../home/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../home/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../home/css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../home/css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../home/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../home/css/style.css">
+
+
+
+
+
+
+
+
+
+
 </head>
 <style>
 
@@ -59,17 +85,18 @@ button:hover {
   opacity: 0.8;
 }
 .sidenav {
-  height: 8%;
-    width: 0;
+  height: 7%;
+    width: 1287px;
     position: absolute;
     margin: 0 0 0 0px;
     z-index: 100;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: aliceblue;
     overflow: hidden;
     transition: 0.5s;
     padding: 15px 0 0 0;
+    cursor: pointer;
 }
 
 .sidenav a {
@@ -95,7 +122,7 @@ button:hover {
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
+ 
 }
 
 @media screen and (max-height: 450px) {
@@ -108,14 +135,15 @@ button:hover {
  
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <button id="log" data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()" type="button"  class="btn btn-outline-primary">Home Page</button>
-  <button data-toggle="tooltip" title="Downloads your code as an index.html file" id="download" type="button"  class="btn btn-outline-primary">Download HTML/CSS/JS</button>
-  <button data-toggle="tooltip" title="Clears your HTML, CSS, or Javascript from the screen " id="clear" type="button"  class="btn btn-outline-primary">Clear HTML/CSS/JS</button>
-  <button data-toggle="tooltip" title="Saves your code to local storage on Google Chrome" id="save" type="button"  class="btn btn-outline-primary">Save to Local Storage</button>
-  <button data-toggle="tooltip" title="Loads your last stored code" id="load" type="button"  class="btn btn-outline-primary">Load from Local Storage</button>
-  <button id="run" type="button"  class="btn btn-outline-primary">Run The Code</button>
-
-  <select class="context-menu-list" >
+        <ul>
+          <li class="btn_3" id="log" data-toggle="tooltip" title="Takes you back to the homepage" onclick="cancel()"><img class="bimg" src="../home/img/home.png" alt="Home"> Home Page </li>
+          <li class="btn_3" data-toggle="tooltip" title="Downloads your code as an index.html file" id="download"><img class="bimg" src="../home/img/dwl.png" alt="Download"> Download</li>
+          <li class="btn_3" data-toggle="tooltip" title="Clears your HTML, CSS, or Javascript from the screen " id="clear" ><img class="bimg" src="../home/img/clr.png" alt="Clear"> Clear</li>
+          <li class="btn_3" data-toggle="tooltip" title="Saves your code to local storage on Google Chrome" id="save"  ><img class="bimg" src="../home/img/save.png" alt="Save"> Save to Local Storage </li>
+          <li class="btn_3" data-toggle="tooltip" title="Loads your last stored code" id="load" ><img class="bimg" src="../home/img/load.png" alt="Load"> Load from Local Storage </li>
+          <li class="btn_3" id="run"  ><img class="bimg" src="../home/img/run.png" alt="Run"> Run</li>
+        </ul>
+  <select class="context-menu-list" style="margin-left: 34px" >
     <optgroup label="CSS Frameworks">
         <option value="plaincss">Plain CSS</option>
         <option value="autoprefixer">Autoprefixer</option>
@@ -128,12 +156,14 @@ button:hover {
       <optgroup label="Reversions">
           <option value="normalize">Normalize CSS</option>
           <option value="modernizr">Modernize CSS</option>
-          
+         
         </optgroup>
+       
     </select>
+    <div id="temp" ><img class="bimg" src="../home/img/btn3.png" alt="btn1"> Rotate</div>
+    <div id="tempb" ><img class="bimg" src="../home/img/btn2.png" alt="btn1"> Rotate</div>
       </div>
-      <div id="temp" ><img class="btnimg" src="../home/img/btn3.png" alt="btn1"> Rotate</div>
-      <div id="tempb" ><img class="btnimg" src="../home/img/btn2.png" alt="btn1"> Rotate</div>
+     
       <div id="main">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
       </div>
@@ -206,7 +236,7 @@ button:hover {
     window.location.href = "/";
  }
  function openNav() {
-  document.getElementById("mySidenav").style.width = "1391px";
+  document.getElementById("mySidenav").style.width = "1287px";
   document.getElementById("main").style.marginLeft = "250px";
 }
 

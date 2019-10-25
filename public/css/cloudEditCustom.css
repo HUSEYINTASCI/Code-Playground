@@ -39,9 +39,7 @@
   outline: none;
 }
 
-.row {
  
-}
 
 .row [class*="column-"] {
   margin: 0;
@@ -140,83 +138,7 @@ section:after {
   color: #444;
 }
 
-#htmlToggle:after {
-  content: " \2630";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#cssToggle:after {
-  content: " \2630";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#jsToggle:after {
-  content: " \2630";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#consoleToggle:after {
-  content: " \2630";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#liveEdit:after {
-  content: " \270D";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 1;
-}
-#previewToggle:after {
-  content: " \25F3";
-  position: relative;
-  top: -1px;
-  color: #777;
-  opacity: 1;
-}
-#clear:after {
-  content: " \27C1";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 1;
-}
-#run:after {
-  content: " \25BA";
-  position: relative;
-  top: 1px;
-  color: #777;
-  opacity: 0.5;
-}
-#save:after {
-  content: " \2605";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#load:after {
-  content: " \2606";
-  position: relative;
-  top: 0;
-  color: #777;
-  opacity: 0.5;
-}
-#download:after {
-  content: " \25BC";
-  position: relative;
-  top: 1px;
-  color: #777;
-  opacity: 0.5;
-}
+ 
 
 .window {
   margin-top: 0.5rem;
@@ -585,9 +507,9 @@ html.modal-open #iframeClose {
   100%{ left: 10%;}
 }
  #temp{
-       width: 59px;
-    position: absolute;
-    margin: 11px 0 0 1246px;
+  width: 62px;
+  position: absolute;
+  margin: -15px 0 0 1141px;
  }
 
  .btnimg{
@@ -595,8 +517,8 @@ html.modal-open #iframeClose {
  }
 
  #tempb{
-  width: 59px;
-position: absolute;
-margin: 11px 0 0 1246px;
+  width: 62px;
+  position: absolute;
+  margin: -15px 0 0 1141px;
 display: none;
 }
