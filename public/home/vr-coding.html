@@ -38,9 +38,9 @@
       <h2>Room Information</h2>
       <p>Please Enter The Room Code</p>
       <img class="teampic" src="img/giphy3.gif" alt="Harry">
-      <form class="login-form" action="/scene.html" method="GET">
+     
         <input id="room" type="text" name="room" placeholder="Room Code" required/>
-        <p><a class="btn btn-secondary" href="https://parallel-finch.glitch.me/?room-vrcoding" role="button">Join The Room »</a></p>
+       <button id="rbutton" class="btn btn-secondary">Join The Room »</button>
       </form>
     </div>
   </div>
@@ -72,16 +72,19 @@
     <script src="js/custom.js"></script>    
 
     <script>
-    
-    $(".btn btn-secondary").on("click",function(){
+    var roomcode;
+    $("#rbutton").on("click",function(){
 
-        let roomcode=$("#room").val();
+         roomcode=$("#room").val();
 
         if (roomcode==""){
-
+          url ='https://parallel-finch.glitch.me/?room-vrcoding/';
+        window.open(url);
 
         }else{
 
+          url ='https://parallel-finch.glitch.me/?room-vrcoding/' + roomcode;
+        window.open(url);
 
         }
 
