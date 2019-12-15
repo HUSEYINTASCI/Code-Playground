@@ -55,12 +55,12 @@
       $("#log").text("Log Out");
     }
 
-    if (b == null) {
-      $("#download").css("display", "none");
-      $("#save").css("display", "none");
-      $("#load").css("display", "none");
+    // if (b == null) {
+    //   $("#download").css("display", "none");
+    //   $("#save").css("display", "none");
+    //   $("#load").css("display", "none");
 
-    }
+    // }
 
     // CSS Editor
     window.cssField = ace.edit("css");
